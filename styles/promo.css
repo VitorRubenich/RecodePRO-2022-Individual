@@ -1,0 +1,22 @@
+.h2-promo{
+    text-align: center;
+    font-weight: 600;
+}
+.off{
+    color: rgb(227, 23, 23);
+    font-weight: 700;
+    text-align: center;
+}
+.off{
+    width: 5rem;
+    background-color: rgb(0, 0, 0);
+}
+.card .off{
+    position: absolute;
+    top: 0.65rem;
+    right: -0.65rem;
+    
+}   
+.oferta{
+    border-radius: 1rem solid white;
+}
