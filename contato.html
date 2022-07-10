@@ -12,7 +12,8 @@
     <title>Contato</title>
 </head>
 <body>
-    <nav class="navbar bg-white navbar-expand-lg navbar-light border-bottom ">
+    <a id="inicio"></a>
+    <nav class="navbar bg-white navbar-expand-lg navbar-light border-bottom">
         <div class="container-fluid ">
             <a href="index.html">
                 <img class="logo logo-claro" src="img/logo.jpg" href="index.html">
@@ -24,7 +25,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="itens nav-item px-3">
+                    <li class="itens nav-item px-3">    
                         <a class="nav-link fs-5" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="itens nav-item px-3 ">
@@ -44,7 +45,7 @@
     <div class="container">
         <div class="formulario">
             <h2>Preencha o formulário</h2>
-            <form action="post">
+            <form action="/todo">
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
                     <label for="floatingInput">Seu melhor email</label>
@@ -68,7 +69,7 @@
                         <div class="row">
                             <div class="col-sm">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <input class="form-check-input" type="checkbox" value="ext" id="defaultCheck1">
                                     <label class="form-check-label" for="defaultCheck1">
                                       Viagens ao Exterior
                                     </label>
@@ -76,7 +77,7 @@
                             </div>
                             <div class="col-sm">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                    <input class="form-check-input" type="checkbox" value="paradi" id="defaultCheck2">
                                     <label class="form-check-label" for="defaultCheck2">
                                       Lugares Paradisiacos
                                     </label>
@@ -86,9 +87,10 @@
                         <div class="row">
                             <div class="col-sm">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                                    <input class="form-check-input" type="checkbox" value="praia" id="defaultCheck3">
                                     <label class="form-check-label" for="defaultCheck3">
-                                      Todas ofertas
+                                        Regiões praianas
+                                    
                                     </label>
                                   </div>
                             </div>
@@ -96,7 +98,8 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="all" id="defaultCheck4">
                                     <label class="form-check-label" for="defaultCheck4">
-                                      Regiões praianas
+                                      Todas ofertas
+
                                     </label>
                                   </div>
                             </div>
@@ -110,18 +113,46 @@
                     <input class="form-check-input" type="checkbox" role="switch" id="flexAceitarPermissoes" required>
                     <label class="form-check-label" for="flexAceitarPermissoes">Concordo com as politicas de privacidade</label>
                   </div>
-                  <button type="submit">
+                  <button type="submit" class="btn btn-primary btn-send" href="">
                     Enviar
                   </button>
             </form>
         </div>
+        
     </div>
 
-
+    
 
     <!-- TODO footer com formas de pagamentos e desenvolvido-->
+    
+    <footer class="footer navbar-fixed-bottom">
+        <p>
+            <a class="botao-inicio"href="#inicio">Voltar ao início</a>
+        </p>
+        <div class="formas-pagamento">
+            <p>Conheça nossas formas de pagamento</p>
+            <img src="img/fp.png" alt="Formas de pagamento">
+        </div>
+        <div>
+            <p class="midias">Siga nossas midias sociais: </p>
+            <p class="midias">
+                <a href="#"><img src="img/social-media/twitter.png" alt="Social media twitter"></a>
+                <a href="#"><img src="img/social-media/insta.png" alt="social media instagram"></a>
+                <a href="#"><img src="img/social-media/fb.png" alt="social media facebook"></a>
+                <a href="#"><img src="img/social-media/yt.png" alt="social media youtube"></a>
+                <a href="#"><img src="img/social-media/in.png" alt="social media linkedin"></a>
+            </p>
+            <span>Desenvolvido por <a href="#">@rubenich.vitor</a></span>
+        </div>
+            
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+    <!-- ICONS 
+    <a href="https://www.flaticon.com/br/icones-gratis/facebook" title="facebook ícones">Facebook ícones criados por Enamo Studios - Flaticon</a>
+    <a href="https://www.flaticon.com/br/icones-gratis/instagram" title="instagram ícones">Instagram ícones criados por Hight Quality Icons - Flaticon</a>    
+    <a href="https://www.flaticon.com/br/icones-gratis/whatsapp" title="whatsapp ícones">Whatsapp ícones criados por Hight Quality Icons - Flaticon</a>
+-->
 </body>
 </html>
