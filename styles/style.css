@@ -1,3 +1,8 @@
+/* CARD */
+.card{
+    margin: 1rem;
+}
+
 .btn-send{
     width: 60%;
     text-align: center;
@@ -63,18 +68,18 @@ span a:hover{
     color: white;
     transition: 0.5s;
 }
-
+.btn-send{
+    width: 100%;
+    text-align: center;
+}
 /* Mostrar de uma forma mais bonita o fomrulario em telas menores*/
 @media (max-width: 992px){
     .formulario{
         width: 100%;
         margin: auto;
-        padding: 1rem;
+        padding: 1rem;  
     }
-    .btn-send{
-        width: 100%;
-        text-align: center;
-    }
+
 }
 /*alinhar as midias sociais em telas menores*/
 @media(max-width: 560px){
