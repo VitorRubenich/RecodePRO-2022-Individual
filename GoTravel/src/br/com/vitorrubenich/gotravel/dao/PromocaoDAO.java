@@ -16,8 +16,8 @@ public class PromocaoDAO {
     Connection conn = null;
     PreparedStatement pstm = null;
 
-    public Destino getPromocao(int id){
-        String sql = "SELECT * from promocao WHERE id = ?";
+    public Promocao getPromocao(int id){
+        String sql = "SELECT from promocao WHERE id = ?";
 
         Promocao destPromo = new Promocao();
 
@@ -30,10 +30,10 @@ public class PromocaoDAO {
             rst = pstm.executeQuery();
 
             while(rst.next()){
-                // criar promo
-                //destPromo.setDestPromo(rst.getString("atracoes"));
-                destPromo.setEndereco(rst.getString("endereco"));
-                destPromo.setInformacoes(rst.getString("informacoes"));
+                destPromo.setPercDesconto(rst.getInt("perc_desconto"));
+                destPromo.setIdDestPromo(rst.getInt("id_destino"));
+                destPromo.setValorComDesconto(rst.getInt("valor_com_desconto"));
+                destPromo.setId(rst.getInt("id"));
             }
         }catch( Exception e){
             e.printStackTrace();
@@ -55,12 +55,10 @@ public class PromocaoDAO {
         return destPromo;
     }
 
-    public List<Destino> getDestinos() throws SQLException {
-        String sql = "SELECT * from destinos";
+    public List<Promocao> getPromooes() throws SQLException {
+        String sql = "SELECT * from promocao";
 
-        List<Destino> destinos = new ArrayList<Destino>();
-
-
+        List<Promocao> promocoes = new ArrayList<>();
 
         ResultSet rst = null;
         try{
@@ -70,11 +68,13 @@ public class PromocaoDAO {
             rst = pstm.executeQuery();
 
             while(rst.next()){
-                Destino dest = new Destino();
-                dest.setInformacoes(rst.getString("informacoes"));
-                dest.setAtracoes(rst.getString("atracoes"));
-                dest.setEndereco((rst.getString("endereco")));
-                destinos.add(dest);
+                Promocao destPromo = new Promocao();
+                destPromo.setPercDesconto(rst.getInt("perc_desconto"));
+                destPromo.setIdDestPromo(rst.getInt("id_destino"));
+                destPromo.setValorComDesconto(rst.getInt("valor_com_desconto"));
+                destPromo.setId(rst.getInt("id"));
+
+                promocoes.add(destPromo);
             }
         }catch( Exception e){
             e.printStackTrace();
@@ -93,18 +93,20 @@ public class PromocaoDAO {
                 e.printStackTrace();
             }
         }
-        return destinos;
+        return promocoes;
     }
 
     public void createPromocao(Destino destino){
-        String sql = "INSERT INTO promocao(destino,endereco,informacoes) VALUES (?,?,?)";
+        String sql = "INSERT INTO promocao(id_destino,perc_desconto,valor_com_desconto) VALUES (?,?,?)";
 
         try{
             conn = ConnectionFactory.createConnectionToMySQL();
             pstm = (PreparedStatement) conn.prepareStatement(sql);
-            pstm.setInt(1, destino.getAtracoes());
-            pstm.setString(2, destino.getEndereco());
-            pstm.setString(3, destino.getInformacoes());
+            pstm.setInt(1, destino.getId());
+            // Regra de negocio fazendo o calculo desconto
+            pstm.setInt(2, 13);
+            pstm.setDouble(3, 500);
+            //pstm.setDouble(3, destino.getInformacoes());
 
             pstm.execute();
         }catch(Exception e){
@@ -124,4 +126,29 @@ public class PromocaoDAO {
         }
     }
 
+    public void deletePromocaoById(int id){
+        String sql = "DELETE from promocao WHERE id = ?";
+        try{
+            conn = ConnectionFactory.createConnectionToMySQL();
+            pstm = (PreparedStatement) conn.prepareStatement(sql);
+            pstm.setInt(1, id);
+            pstm.execute();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            try{
+                if(pstm!=null){
+                    pstm.close();
+                }
+                if(conn != null){
+                    conn.close();
+                }
+
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+
+
+    }
 }

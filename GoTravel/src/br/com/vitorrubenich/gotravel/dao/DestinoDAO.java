@@ -158,4 +158,32 @@ public class DestinoDAO {
         }
 
     }
+
+
+
+    public void deleteDestinoById(int id){
+        String sql = "DELETE from destinos WHERE id = ?";
+        try{
+            conn = ConnectionFactory.createConnectionToMySQL();
+            pstm = (PreparedStatement) conn.prepareStatement(sql);
+            pstm.setInt(1, id);
+            pstm.execute();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            try{
+                if(pstm!=null){
+                    pstm.close();
+                }
+                if(conn != null){
+                    conn.close();
+                }
+
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+
+
+    }
 }

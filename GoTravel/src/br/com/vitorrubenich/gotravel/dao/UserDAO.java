@@ -159,38 +159,29 @@ public class UserDAO {
 
     }
 
-    /*
-    public void updateUsuario(Usuario user){
-        String sql = "UPDATE usuarios SET nome = ?, dataCadastro = ? "+
-                "WHERE id = ?";
-        Connection conn = null;
-        PreparedStatement pstm = null;
-
-        try {
+    public void deleteUsuarioById(int id){
+        String sql = "DELETE from usuarios WHERE id = ?";
+        try{
             conn = ConnectionFactory.createConnectionToMySQL();
-
-            pstm = conn.prepareStatement(sql);
-
-            pstm.setString(2, contato.getNome());
-            pstm.setDate(3, (java.sql.Date) new Date(contato.getDataCadastro().getTime()));
-
-            pstm.setInt(1, contato.getId());
-
+            pstm = (PreparedStatement) conn.prepareStatement(sql);
+            pstm.setInt(1, id);
             pstm.execute();
-        }catch( Exception e){
+        }catch(Exception e){
             e.printStackTrace();
-        }finally {
+        }finally{
             try{
-                if(pstm != null){
+                if(pstm!=null){
                     pstm.close();
                 }
                 if(conn != null){
                     conn.close();
                 }
-            }catch (Exception e){
+
+            }catch(Exception e){
                 e.printStackTrace();
             }
         }
+
+
     }
-    */
 }

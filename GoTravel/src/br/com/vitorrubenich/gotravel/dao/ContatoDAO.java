@@ -56,12 +56,10 @@ public class ContatoDAO {
         return contato;
     }
 
-    public List<Usuario> getUsuarios() throws SQLException {
+    public List<Contato> getContatos() throws SQLException {
         String sql = "SELECT * from contatos";
 
         List<Contato> contatos = new ArrayList<Contato>();
-
-
 
         ResultSet rst = null;
         try{
@@ -71,11 +69,13 @@ public class ContatoDAO {
             rst = pstm.executeQuery();
 
             while(rst.next()){
-                Usuario ct = new Usuario();
-                ct.setId(rst.getInt("id"));
-                ct.setNome(rst.getString("nome"));
-                ct.setDataCadastro((rst.getDate("dataCadastro")));
-                contatos.add(ct);
+                Contato contato = new Contato();
+                contato.setId(rst.getInt("id"));
+                contato.setEmail(rst.getString("email"));
+                contato.setFreqViagem(rst.getString("freq_viagens"));
+                contato.setNome(rst.getString("nome"));
+                contato.setLocaisInteresse(rst.getString("locais_interesse"));
+                contatos.add(contato);
             }
         }catch( Exception e){
             e.printStackTrace();
@@ -97,7 +97,7 @@ public class ContatoDAO {
         return contatos;
     }
 
-    public void createUsuario(Usuario user){
+    public void createContato(Usuario user){
         String sql = "INSERT INTO usuarios(nome,senha,dataCadastro) VALUES (?,?,?)";
 
         try{
@@ -125,5 +125,31 @@ public class ContatoDAO {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void deleteContatoByYId(int id){
+        String sql = "DELETE from contatos WHERE id = ?";
+        try{
+            conn = ConnectionFactory.createConnectionToMySQL();
+            pstm = (PreparedStatement) conn.prepareStatement(sql);
+            pstm.setInt(1, id);
+            pstm.execute();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            try{
+                if(pstm!=null){
+                    pstm.close();
+                }
+                if(conn != null){
+                    conn.close();
+                }
+
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+
+
     }
 }
