@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/global.css">
+    
+    <!--TODO adicionar keywods e outras metatags-->
+    <title>Agencia de Viagens</title>
+</head>
+<body>
+  <!-- NavBar -->
+  <nav class="navbar bg-header-color navbar-expand-lg navbar-light border-bottom">
+    <div class="container-fluid ">
+        <a href="index.html">
+            <img class="logo logo-claro" src="img/img-logo.png" href="index.html">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+            <li class="itens nav-item px-3 ">
+                  <a class="nav-link fs-5" href="index.html">Home</a>
+                </li>
+                <li class="itens nav-item px-3">
+                    <a class="nav-link fs-5" href="destinos.html">Destinos</a>
+                </li>
+                <li class="itens nav-item px-3">
+                    <a class="nav-link fs-5" href="promocoes.html">Promoções</a>
+                </li>
+                <li class="itens nav-item px-3">
+                    <a class="nav-link fs-5" href="contato.html">Contato</a>
+                </li>
+                
+            </ul>
+            
+        </div>
+        
+    </div>
+</nav>
+    <!-- Pacotes de viagens-->
+
+    <!-- Refatorar visual-->
+    <div class="container qs">
+        <div class="row">
+        <h1>Conheça a nossa história</h1>
+
+            <div class="col-sm">
+                <h2>Desde 2021</h2>
+                <p>Estamos fazendo história desde 2021, modificando a forma com que você planeja suas viajens, com que você viaja e com que você conhece novos lugares. Queremos te trazer sempre a melhor experiência e transformar sua vida. </p>
+            </div>
+            <div class="col-sm">
+                <h2>Nossos ideais</h2>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          Simplicidade
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Nossa empresa surgiu com a meta de melhorar o modo e a transformar o que é viajar fácil.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                          Responsabilidade
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Nossa empresa é responsável, zela pelo meio ambiente e novas formas de diminuição de poluição, queremos um mundo mais verde e diverso para o nosso futuro.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                          Economia
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Temos diversos planos para suas viajens, seja classe economica, executiva ou primeira classe, nossa meta é entregar um produto incrivel pelo menor preço</div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- TODO footer com formas de pagamentos e desenvolvido-->
+    
+    <footer class="footer navbar-fixed-bottom">
+        <p>
+            <a class="botao-inicio"href="#inicio">Voltar ao início</a>
+        </p>
+        <div class="formas-pagamento">
+            <p>Conheça nossas formas de pagamento</p>
+            <img src="img/fp.png" alt="Formas de pagamento">
+        </div>
+        <div>
+            <p class="midias">Siga nossas midias sociais: </p>
+            <p class="midias">
+                <a href="#"><img src="img/social-media/twitter.png" alt="Social media twitter"></a>
+                <a href="#"><img src="img/social-media/insta.png" alt="social media instagram"></a>
+                <a href="#"><img src="img/social-media/fb.png" alt="social media facebook"></a>
+                <a href="#"><img src="img/social-media/yt.png" alt="social media youtube"></a>
+                <a href="#"><img src="img/social-media/in.png" alt="social media linkedin"></a>
+            </p>
+            <span>Desenvolvido por <a href="#">@rubenich.vitor</a></span>
+        </div>
+            
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>

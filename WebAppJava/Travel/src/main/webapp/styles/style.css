@@ -1,0 +1,89 @@
+/* CARD */
+.card{
+    margin: 1rem;
+}
+
+.btn-send{
+    width: 60%;
+    text-align: center;
+}
+.formulario{
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+}
+.aceitar-permissoes{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.formulario > h2{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.pd-select{
+    margin-top: 1rem;
+}
+.ta{
+    text-align: center;
+    padding: 2rem;
+}
+
+.bg-promo{
+    background-color: rgb(222, 211, 195);
+}
+
+/* Footer*/
+.footer{
+    background-color: rgb(0, 77, 142);
+    color: white;
+}
+.botao-inicio{
+    padding: 0.5rem;
+    text-decoration: none;
+    color: white    ;
+    text-align: center;
+}
+.botao-inicio:hover{
+    cursor: pointer;
+    color: cyan;
+    transition: 0.5s;
+}
+.footer{
+    text-align: center;
+}
+.formas-pagamento img{
+    display: block;
+    margin: auto;    
+    padding-bottom: 1rem;
+}
+
+span a{
+    text-decoration: none;
+    color: white;
+}
+span a:hover{
+    font-weight: 700;
+    color: white;
+    transition: 0.5s;
+}
+.btn-send{
+    width: 100%;
+    text-align: center;
+}
+/* Mostrar de uma forma mais bonita o fomrulario em telas menores*/
+@media (max-width: 992px){
+    .formulario{
+        width: 100%;
+        margin: auto;
+        padding: 1rem;  
+    }
+
+}
+/*alinhar as midias sociais em telas menores*/
+@media(max-width: 560px){
+    .midias a img{
+        width: 48px;
+    }
+}

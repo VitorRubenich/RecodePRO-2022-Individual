@@ -1,0 +1,8 @@
+.card-destinos{
+    width: 18rem;
+}
+@media (max-width: 770px){
+    .card-destinos{
+        width: 22rem;
+    }
+}
