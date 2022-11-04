@@ -1,0 +1,3 @@
+[submodule "TravelerApp"]
+	path = TravelerApp
+	url = https://github.com/VitorRubenich/TravelerApp
